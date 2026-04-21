@@ -3,41 +3,50 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Temporada Mixta 2026 | Fuego en el Ruedo</title>
+<title>🔥 Temporada Mixta 2026 | Acceso Exclusivo</title>
 
 <style>
 body {
     margin: 0;
     font-family: Arial, sans-serif;
-    background: #0b0b0b;
+    background: #000;
     color: white;
 }
 
-.section {
-    padding: 60px 20px;
-    text-align: center;
+/* HERO VIDEO */
+.hero {
+    position: relative;
+    height: 100vh;
+    overflow: hidden;
 }
 
-.hero {
-    background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.9)),
-    url('https://images.unsplash.com/photo-1601758064223-7cbe8a9c8f2d');
-    background-size: cover;
-    background-position: center;
+.hero video {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0,0,0,0.6);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 20px;
 }
 
 h1 {
-    font-size: 2.5em;
-    margin-bottom: 20px;
-}
-
-p {
-    font-size: 1.2em;
-    max-width: 600px;
-    margin: auto;
+    font-size: 2.8em;
 }
 
 .btn {
-    display: inline-block;
     margin-top: 20px;
     padding: 15px 30px;
     background: #ff3c00;
@@ -47,90 +56,138 @@ p {
     border-radius: 5px;
 }
 
-.btn:hover {
-    background: #ff5a1f;
+.section {
+    padding: 60px 20px;
+    text-align: center;
 }
 
-.form input {
+input {
     display: block;
-    width: 80%;
-    max-width: 300px;
     margin: 10px auto;
     padding: 12px;
-    border: none;
+    width: 80%;
+    max-width: 300px;
     border-radius: 5px;
+    border: none;
 }
 
-.form button {
+button {
     padding: 15px;
     background: #ff3c00;
-    border: none;
     color: white;
+    border: none;
     font-weight: bold;
     border-radius: 5px;
-    cursor: pointer;
 }
 
-.highlight {
+/* CONTADOR */
+#countdown {
+    font-size: 2em;
     color: #ff3c00;
-    font-weight: bold;
 }
 
+/* BOTÓN WHATSAPP */
+.whatsapp {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background: #25D366;
+    color: white;
+    padding: 15px;
+    border-radius: 50%;
+    text-decoration: none;
+    font-size: 20px;
+}
 </style>
 </head>
 
 <body>
 
 <!-- HERO -->
-<section class="section hero">
-    <h1>🔥 LA TEMPORADA MIXTA 2026 YA COMENZÓ</h1>
-    <p>🐓 Vive los enfrentamientos más intensos EN VIVO.<br>⏳ Cupos limitados — acceso exclusivo</p>
-    <a href="#formulario" class="btn">QUIERO MI ACCESO AHORA</a>
+<section class="hero">
+    <video autoplay muted loop>
+        <source src="TU_VIDEO_REAL.mp4" type="video/mp4">
+    </video>
+
+    <div class="overlay">
+        <h1>🔥 ESTO YA COMENZÓ…</h1>
+        <p>🐓 La Temporada Mixta 2026 está en juego</p>
+        <p>⏳ Cuando se llena… se cierra</p>
+        <a href="#form" class="btn">QUIERO MI ACCESO</a>
+    </div>
 </section>
 
-<!-- CAPTURA -->
-<section class="section" id="formulario">
-    <h2>🎁 Accede GRATIS a una pelea exclusiva</h2>
-    <p>Recibe también el calendario oficial 2026</p>
+<!-- FORM -->
+<section class="section" id="form">
+    <h2>🎁 ACCESO GRATIS</h2>
+    <p>Recibe una pelea exclusiva + calendario 2026</p>
 
-    <form class="form">
-        <input type="text" placeholder="Nombre" required>
-        <input type="tel" placeholder="WhatsApp" required>
-        <input type="email" placeholder="Email" required>
-        <button type="submit">QUIERO EL ACCESO GRATIS</button>
+    <form onsubmit="enviarWhatsApp(event)">
+        <input type="text" id="nombre" placeholder="Nombre" required>
+        <input type="tel" id="whatsapp" placeholder="WhatsApp" required>
+        <input type="email" id="email" placeholder="Email" required>
+        <button type="submit">QUIERO EL ACCESO</button>
     </form>
 </section>
 
 <!-- PRUEBA SOCIAL -->
 <section class="section">
-    <h2>🔥 Más de <span class="highlight">50,000 aficionados</span> ya están dentro</h2>
-    <p>Eventos reales. Emoción real. Criadores reales.</p>
+    <h2>🔥 Más de 50,000 ya están dentro</h2>
+    <p>Esto no es cualquier evento… es el ruedo real</p>
 </section>
 
 <!-- OFERTA -->
 <section class="section">
-    <h2>💰 ¿Qué obtienes?</h2>
+    <h2>💰 Lo que obtienes</h2>
     <p>
-        ✔️ Transmisiones en vivo<br>
-        ✔️ Eventos exclusivos<br>
-        ✔️ Acceso a criadores top<br>
-        ✔️ Repeticiones privadas
+        ✔️ Eventos en vivo<br>
+        ✔️ Acceso exclusivo<br>
+        ✔️ Repeticiones<br>
     </p>
-    <a href="#formulario" class="btn">QUIERO ENTRAR AHORA</a>
 </section>
 
 <!-- URGENCIA -->
 <section class="section">
-    <h2>⏳ Cupos limitados</h2>
-    <p>🔥 Cuando se llenan… se cierra el acceso</p>
-    <a href="#formulario" class="btn">ASEGURAR MI CUPO</a>
+    <h2>⏳ Tiempo restante</h2>
+    <div id="countdown"></div>
 </section>
 
-<!-- CIERRE -->
+<!-- CTA FINAL -->
 <section class="section">
-    <h2>🐓 Si estás en este mundo… sabes lo que significa estar dentro</h2>
-    <a href="#formulario" class="btn">ÚNETE AHORA</a>
+    <h2>🐓 Si sabes… sabes</h2>
+    <a href="#form" class="btn">ENTRAR AHORA</a>
 </section>
+
+<!-- BOTÓN WHATSAPP -->
+<a class="whatsapp" href="https://wa.me/51999999999?text=Quiero%20acceso%20a%20la%20temporada" target="_blank">💬</a>
+
+<script>
+// CONTADOR
+var end = new Date();
+end.setHours(end.getHours() + 24);
+
+setInterval(function() {
+    var now = new Date().getTime();
+    var distance = end - now;
+
+    var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+    var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+    var seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+    document.getElementById("countdown").innerHTML =
+    hours + "h " + minutes + "m " + seconds + "s ";
+}, 1000);
+
+// WHATSAPP
+function enviarWhatsApp(e){
+    e.preventDefault();
+
+    var nombre = document.getElementById("nombre").value;
+    var mensaje = "🔥 Quiero acceso a la Temporada Mixta 2026\nNombre: " + nombre;
+
+    window.open("https://wa.me/51999999999?text=" + encodeURIComponent(mensaje), "_blank");
+}
+</script>
 
 </body>
 </html>
